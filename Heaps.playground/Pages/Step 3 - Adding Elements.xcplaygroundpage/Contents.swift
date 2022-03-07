@@ -46,6 +46,7 @@ extension MinHeap: CustomStringConvertible {
 
     var description: String {
         var text = ""
+        text += "Total outstanding tasks: \(size)\n"
         var taskNumber = 1
         for task in heap {
             text += "\(taskNumber): \(task)\n"

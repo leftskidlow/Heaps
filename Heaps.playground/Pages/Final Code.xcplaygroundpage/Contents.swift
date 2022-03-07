@@ -4,31 +4,12 @@
 
 import Foundation
 
-class TaskNode {
-    
-    // Instance Variables
-    private var dueDate: Date
-    private var task: String
-    
-    // Initializer
-    init(_ task: String, _ dueDate: Date) {
-        self.dueDate = dueDate
-        self.task = task
-    }
-    func getTask() -> String {
-        return task
-    }
-}
-
 class MinHeap {
     
     // Instance Variables
     private var heap: [TaskNode]
     private var size: Int {
         heap.count
-    }
-    private var isEmpty : Bool {
-        heap.isEmpty
     }
     
     // Initializer
@@ -48,7 +29,7 @@ class MinHeap {
     
     // getTask Method -> Allows a user to see the task without removing it
     func getTask() {
-        if isEmpty {
+        if heap.isEmpty {
             print("Your task list is empty, good job!")
             return
         }
@@ -57,7 +38,7 @@ class MinHeap {
     
     // finishTask Method -> Removes the task from the heap and reorganizes it
     func finishTask() {
-        if isEmpty {
+        if heap.isEmpty {
             print("There are no tasks left to complete.")
             return
         } else {
@@ -140,6 +121,21 @@ extension MinHeap: CustomStringConvertible {
             taskNumber += 1
         }
         return String(text.dropLast(2))
+    }
+}
+class TaskNode {
+    
+    // Instance Variables
+    private var dueDate: Date
+    private var task: String
+    
+    // Initializer
+    init(_ task: String, _ dueDate: Date) {
+        self.dueDate = dueDate
+        self.task = task
+    }
+    func getTask() -> String {
+        return task
     }
 }
 extension TaskNode: Comparable, CustomStringConvertible {

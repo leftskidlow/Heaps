@@ -4,5 +4,6 @@
         <page name='Final Code'/>
         <page name='Step 1 - Introduction'/>
         <page name='Step 2 - The MinHeap'/>
+        <page name='Step 3 - Adding Elements'/>
     </pages>
 </playground>

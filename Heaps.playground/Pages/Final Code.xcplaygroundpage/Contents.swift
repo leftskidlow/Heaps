@@ -155,7 +155,7 @@ extension TaskNode: Comparable, CustomStringConvertible {
 }
 
 
-var test: MinHeap = MinHeap();
+let test: MinHeap = MinHeap();
 let dateFormatter = DateFormatter()
 dateFormatter.dateFormat = "MM/dd/yyyy HH:mm"
 test.add(task: "Meeting: Annual Review", dueDate: dateFormatter.date(from: "05/01/2045 09:00")!)

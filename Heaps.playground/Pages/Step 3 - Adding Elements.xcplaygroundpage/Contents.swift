@@ -70,6 +70,15 @@ extension TaskNode: Comparable, CustomStringConvertible {
     }
 }
 
+/*
+ let toDoList: MinHeap = MinHeap();
+ let dateFormatter = DateFormatter()
+ dateFormatter.dateFormat = "MM/dd/yyyy HH:mm"
+ toDoList.add(task: "Meeting: Annual Review", dueDate: dateFormatter.date(from: "05/01/2045 09:00")!)
+ toDoList.add(task: "Submit Initial Design Ideas", dueDate: dateFormatter.date(from: "05/01/2000 11:00")!)
+ print(toDoList)
+ */
+
 /* Final Save Point
  
 import Foundation
@@ -151,4 +160,11 @@ extension TaskNode: Comparable, CustomStringConvertible {
         return "\(task), Due: \(dueDate.formatted())"
     }
 }
+ 
+ let toDoList: MinHeap = MinHeap();
+ let dateFormatter = DateFormatter()
+ dateFormatter.dateFormat = "MM/dd/yyyy HH:mm"
+ toDoList.add(task: "Meeting: Annual Review", dueDate: dateFormatter.date(from: "05/01/2045 09:00")!)
+ toDoList.add(task: "Submit Initial Design Ideas", dueDate: dateFormatter.date(from: "05/01/2000 11:00")!)
+ print(toDoList)
 */

@@ -32,8 +32,8 @@ class MinHeap {
 class TaskNode {
 
     // Instance Variables
-    private var dueDate: Date
-    private var task: String
+    private let dueDate: Date
+    private let task: String
 
     // Initializer
     init(_ task: String, _ dueDate: Date) {

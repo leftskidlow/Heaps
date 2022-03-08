@@ -13,7 +13,7 @@ class MinHeap {
         self.heap = [];
     }
     
-    // Public Functions
+    // Public Methods
     
     // Add Function -> Adds a task to the heap
     func add(task: String, dueDate: Date) {
@@ -23,15 +23,25 @@ class MinHeap {
         heapifyUp()
     }
     
+    // getTask Function -> Allows a user to see the task without removing it
     
-    // Private Functions
+    
+    
+    
+    
+    // Private Methods
     
     // HeapifyUp Function -> Makes sure the the parent node is older than its children
     private func heapifyUp() {
-        
+        var currentIndex = size - 1
+        while currentIndex > 0 && heap[currentIndex] < heap[parentIndex(of: currentIndex)] {
+            print("Heapifying (up) elements at index: \(currentIndex) & \(parentIndex(of: currentIndex))")
+            heap.swapAt(currentIndex, parentIndex(of: currentIndex))
+            currentIndex = parentIndex(of: currentIndex)
+        }
     }
     
-    // Helper Functions -> Will be given to the learner in the form of an initial savepoint of an exercise
+    // Helper Methods -> Will be given to the learner in the form of an initial savepoint of an exercise
     private func leftChildIndex(of index: Int) -> Int {
         return (2 * index) + 1
     }
@@ -61,7 +71,7 @@ class TaskNode {
         self.task = task
     }
     
-    // Getter Functions
+    // Getter Methods
     func getTask() -> String {
         return task
     }
@@ -95,20 +105,21 @@ extension TaskNode: Comparable, CustomStringConvertible {
         return "\(task), Due: \(dueDate.formatted())"
     }
 }
-
 /*
 let toDoList: MinHeap = MinHeap();
 let dateFormatter = DateFormatter()
 dateFormatter.dateFormat = "MM/dd/yyyy HH:mm"
-toDoList.add(task: "Meeting: Annual Review", dueDate: dateFormatter.date(from: "05/01/2045 09:00")!)
-toDoList.add(task: "Submit Initial Design Ideas", dueDate: dateFormatter.date(from: "05/01/2000 11:00")!)
+toDoList.add(task: "Mentor Intern", dueDate: dateFormatter.date(from: "09/15/2041 16:25")!)
+toDoList.add(task: "Swap Laundry", dueDate: dateFormatter.date(from: "11/05/2003 13:00")!)
+toDoList.add(task: "Run Anti Virus Software", dueDate: dateFormatter.date(from: "08/31/2009 23:30")!)
 print(toDoList)
+print()
+toDoList.getTask()
  */
 
 
-
 /* Final Save Point
- 
+
 import Foundation
 
 class MinHeap {
@@ -124,7 +135,7 @@ class MinHeap {
         self.heap = [];
     }
     
-    // Public Functions
+    // Public Methods
     
     // Add Function -> Adds a task to the heap
     func add(task: String, dueDate: Date) {
@@ -134,7 +145,16 @@ class MinHeap {
         heapifyUp()
     }
     
-    // Private Functions
+    // getTask Function -> Allows a user to see the task without removing it
+    func getTask() {
+        if heap.isEmpty {
+            print("Your task list is empty, good job!")
+        } else {
+            print("Your next task is: \(heap.first!)")
+        }
+    }
+    
+    // Private Methods
     
     // HeapifyUp Function -> Makes sure the the parent node is older than its children
     private func heapifyUp() {
@@ -146,7 +166,7 @@ class MinHeap {
         }
     }
     
-    // Helper Functions -> Will be given to the learner in the form of an initial savepoint of an exercise
+    // Helper Methods -> Will be given to the learner in the form of an initial savepoint of an exercise
     private func leftChildIndex(of index: Int) -> Int {
         return (2 * index) + 1
     }
@@ -176,7 +196,7 @@ class TaskNode {
         self.task = task
     }
     
-    // Getter Functions
+    // Getter Methods
     func getTask() -> String {
         return task
     }
@@ -211,10 +231,13 @@ extension TaskNode: Comparable, CustomStringConvertible {
     }
 }
 
- let toDoList: MinHeap = MinHeap();
- let dateFormatter = DateFormatter()
- dateFormatter.dateFormat = "MM/dd/yyyy HH:mm"
- toDoList.add(task: "Meeting: Annual Review", dueDate: dateFormatter.date(from: "05/01/2045 09:00")!)
- toDoList.add(task: "Submit Initial Design Ideas", dueDate: dateFormatter.date(from: "05/01/2000 11:00")!)
- print(toDoList)
- */
+let toDoList: MinHeap = MinHeap();
+let dateFormatter = DateFormatter()
+dateFormatter.dateFormat = "MM/dd/yyyy HH:mm"
+toDoList.add(task: "Mentor Intern", dueDate: dateFormatter.date(from: "09/15/2041 16:25")!)
+toDoList.add(task: "Swap Laundry", dueDate: dateFormatter.date(from: "11/05/2003 13:00")!)
+toDoList.add(task: "Run Anti Virus Software", dueDate: dateFormatter.date(from: "08/31/2009 23:30")!)
+print(toDoList)
+print()
+toDoList.getTask()
+*/

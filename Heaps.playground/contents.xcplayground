@@ -6,5 +6,6 @@
         <page name='Step 2 - The MinHeap'/>
         <page name='Step 3 - Adding Elements'/>
         <page name='Step 4 - HeapifyUp'/>
+        <page name='Step 5 - getTask'/>
     </pages>
 </playground>

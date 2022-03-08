@@ -13,15 +13,15 @@ class MinHeap {
         self.heap = [];
     }
 
-    // Public Methods
+    // Public Functions
 
-    // Add Method -> Adds a task to the heap
+    // Add Function -> Adds a task to the heap
 
 
 
-    // Private Methods
+    // Private Functions
 
-    // HeapifyUp Method -> Makes sure the the parent node is older than its children
+    // HeapifyUp Function -> Makes sure the the parent node is older than its children
 }
 
 class TaskNode {
@@ -36,7 +36,7 @@ class TaskNode {
         self.task = task
     }
 
-    // Getter Methods
+    // Getter Functions
     func getTask() -> String {
         return task
     }
@@ -97,9 +97,9 @@ class MinHeap {
         self.heap = [];
     }
     
-    // Public Methods
+    // Public Functions
     
-    // Add Method -> Adds a task to the heap
+    // Add Function -> Adds a task to the heap
     func add(task: String, dueDate: Date) {
         let taskNode = TaskNode(task, dueDate)
         print("Adding [\(taskNode.getTask())]...")
@@ -108,9 +108,9 @@ class MinHeap {
     }
     
     
-    // Private Methods
+    // Private Functions
     
-    // HeapifyUp Method -> Makes sure the the parent node is older than its children
+    // HeapifyUp Function -> Makes sure the the parent node is older than its children
     private func heapifyUp() {
         
     }
@@ -128,7 +128,7 @@ class TaskNode {
         self.task = task
     }
     
-    // Getter Methods
+    // Getter Functions
     func getTask() -> String {
         return task
     }

@@ -3,6 +3,7 @@
  */
 
 import Foundation
+import CoreFoundation
 
 class MinHeap {
     
@@ -17,9 +18,9 @@ class MinHeap {
         self.heap = []
     }
     
-    // Public Facing Methods
+    // Public Facing Function
     
-    // Add Method -> Adds a task to the heap
+    // Add Function -> Adds a task to the heap
     func add(task: String, dueDate: Date) {
         let taskNode = TaskNode(task, dueDate)
         print("Adding [\(taskNode.getTask())]...")
@@ -27,16 +28,16 @@ class MinHeap {
         heapifyUp()
     }
     
-    // getTask Method -> Allows a user to see the task without removing it
+    // getTask Function -> Allows a user to see the task without removing it
     func getTask() {
         if heap.isEmpty {
             print("Your task list is empty, good job!")
-            return
+        } else {
+            print("Your next task is: \(heap.first!)")
         }
-        print("Your next task is: \(heap.first!)")
     }
     
-    // finishTask Method -> Removes the task from the heap and reorganizes it
+    // finishTask Function -> Removes the task from the heap and reorganizes it
     func finishTask() {
         if heap.isEmpty {
             print("There are no tasks left to complete.")
@@ -48,9 +49,9 @@ class MinHeap {
         heapifyDown()
     }
     
-    // Private Methods
+    // Private Function
     
-    // HeapifyUp Method -> Makes sure the the parent node is older than its children
+    // HeapifyUp Function -> Makes sure the the parent node is older than its children
     private func heapifyUp() {
         var currentIndex = size - 1
         while currentIndex > 0 && heap[currentIndex] < heap[parentIndex(of: currentIndex)] {
@@ -60,7 +61,7 @@ class MinHeap {
         }
     }
     
-    // HeapifyDown Method -> Makes sure the older child is swapped with a younger parent
+    // HeapifyDown Function -> Makes sure the older child is swapped with a younger parent
     private func heapifyDown() {
         var currentIndex = 0
         var toSwap: (needsToSwap: Bool, olderChildIndex: Int) = hasOlderChildren(currentIndex)
@@ -72,7 +73,7 @@ class MinHeap {
         }
     }
     
-    // hasOlderChildren Method -> Determines if a parent has children to swap with and returns the bool to run the while loop and the index of the oldest child to swap with
+    // hasOlderChildren Function -> Determines if a parent has children to swap with and returns the bool to run the while loop and the index of the oldest child to swap with
     private func hasOlderChildren(_ currentIndex: Int) -> (Bool, Int) {
         var olderChild = false
         var olderChildIndex = 0
@@ -92,7 +93,7 @@ class MinHeap {
         return (olderChild, olderChildIndex)
     }
     
-    // Helper Methods -> Will be given to the learner in the form of an initial savepoint of an exercise
+    // Helper Function -> Will be given to the learner in the form of an initial savepoint of an exercise
     private func leftChildIndex(of index: Int) -> Int {
         return (2 * index) + 1
     }
@@ -156,26 +157,25 @@ extension TaskNode: Comparable, CustomStringConvertible {
 }
 
 
-let test: MinHeap = MinHeap();
+let tetoDoListst: MinHeap = MinHeap();
 let dateFormatter = DateFormatter()
 dateFormatter.dateFormat = "MM/dd/yyyy HH:mm"
-test.add(task: "Meeting: Annual Review", dueDate: dateFormatter.date(from: "05/01/2045 09:00")!)
-test.add(task: "Submit Initial Design Ideas", dueDate: dateFormatter.date(from: "05/01/2000 11:00")!)
-test.add(task: "Review Swift Fundamentals", dueDate: dateFormatter.date(from: "04/28/2000 19:00")!)
-test.add(task: "Finish Lesson on Algorithms", dueDate: dateFormatter.date(from: "03/22/2000 13:45")!)
-test.add(task: "Apply for Job", dueDate: dateFormatter.date(from: "06/17/2044 12:55")!)
-test.add(task: "Finish Interview Prep", dueDate: dateFormatter.date(from: "07/25/2046 11:05")!)
-test.add(task: "Complete Code Review", dueDate: dateFormatter.date(from: "10/29/2012 15:30")!)
-test.add(task: "Mentor Intern", dueDate: dateFormatter.date(from: "09/15/2041 16:25")!)
-test.add(task: "Swap Laundry", dueDate: dateFormatter.date(from: "11/05/2003 13:00")!)
-test.add(task: "Run Anti Virus Software", dueDate: dateFormatter.date(from: "08/31/2009 23:30")!)
-test.add(task: "Relax", dueDate: dateFormatter.date(from: "01/11/2100 19:00")!)
-print(test)
-test.getTask()
-test.finishTask()
-//test.finishTask()
-//test.finishTask()
-//test.finishTask()
-//test.finishTask()
-//test.finishTask()
-print(test)
+toDoList.add(task: "Meeting: Annual Review", dueDate: dateFormatter.date(from: "05/01/2045 09:00")!)
+toDoList.add(task: "Submit Initial Design Ideas", dueDate: dateFormatter.date(from: "05/01/2000 11:00")!)
+toDoList.add(task: "Review Swift Fundamentals", dueDate: dateFormatter.date(from: "04/28/2000 19:00")!)
+toDoList.add(task: "Finish Lesson on Algorithms", dueDate: dateFormatter.date(from: "03/22/2000 13:45")!)
+toDoList.add(task: "Apply for Job", dueDate: dateFormatter.date(from: "06/17/2044 12:55")!)
+toDoList.add(task: "Finish Interview Prep", dueDate: dateFormatter.date(from: "07/25/2046 11:05")!)
+toDoList.add(task: "Complete Code Review", dueDate: dateFormatter.date(from: "10/29/2012 15:30")!)
+toDoList.add(task: "Mentor Intern", dueDate: dateFormatter.date(from: "09/15/2041 16:25")!)
+toDoList.add(task: "Swap Laundry", dueDate: dateFormatter.date(from: "11/05/2003 13:00")!)
+toDoList.add(task: "Run Anti Virus Software", dueDate: dateFormatter.date(from: "08/31/2009 23:30")!)
+toDoList.add(task: "Relax", dueDate: dateFormatter.date(from: "01/11/2100 19:00")!)
+print(toDoList)
+toDoList.finishTask()
+//toDoList.finishTask()
+//toDoList.finishTask()
+//toDoList.finishTask()
+//toDoList.finishTask()
+//toDoList.finishTask()
+print(toDoList)

@@ -9,5 +9,6 @@
         <page name='Step 5 - getTask'/>
         <page name='Step 6 - finishTask Start'/>
         <page name='Step 7 - hasOlderChildren'/>
+        <page name='Step 8 - heapifyDown'/>
     </pages>
 </playground>

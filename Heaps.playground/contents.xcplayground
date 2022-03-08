@@ -7,5 +7,6 @@
         <page name='Step 3 - Adding Elements'/>
         <page name='Step 4 - HeapifyUp'/>
         <page name='Step 5 - getTask'/>
+        <page name='Step 6 - finishTask Start'/>
     </pages>
 </playground>

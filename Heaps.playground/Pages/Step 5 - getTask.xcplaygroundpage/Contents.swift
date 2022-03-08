@@ -24,7 +24,13 @@ class MinHeap {
     }
     
     // getTask Function -> Allows a user to see the task without removing it
-    
+    func getTask() {
+        if heap.isEmpty {
+            print("Your task list is empty, good job!")
+        } else {
+            print("Your next task is: \(heap[0])")
+        }
+    }
     
     
     
@@ -150,7 +156,7 @@ class MinHeap {
         if heap.isEmpty {
             print("Your task list is empty, good job!")
         } else {
-            print("Your next task is: \(heap.first!)")
+            print("Your next task is: \(heap[0])")
         }
     }
     

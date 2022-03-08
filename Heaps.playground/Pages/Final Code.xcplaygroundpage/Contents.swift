@@ -33,7 +33,7 @@ class MinHeap {
         if heap.isEmpty {
             print("Your task list is empty, good job!")
         } else {
-            print("Your next task is: \(heap.first!)")
+            print("Your next task is: \(heap[0])")
         }
     }
     
@@ -157,7 +157,7 @@ extension TaskNode: Comparable, CustomStringConvertible {
 }
 
 
-let tetoDoListst: MinHeap = MinHeap();
+let toDoList: MinHeap = MinHeap();
 let dateFormatter = DateFormatter()
 dateFormatter.dateFormat = "MM/dd/yyyy HH:mm"
 toDoList.add(task: "Meeting: Annual Review", dueDate: dateFormatter.date(from: "05/01/2045 09:00")!)

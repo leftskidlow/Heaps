@@ -13,7 +13,7 @@ class MinHeap {
         self.heap = [];
     }
     
-    // Public Methods
+    // Public Functions
     
     // Add Function -> Adds a task to the heap
     func add(task: String, dueDate: Date) {
@@ -24,18 +24,10 @@ class MinHeap {
     }
     
     // getTask Function -> Allows a user to see the task without removing it
-    func getTask() {
-        if heap.isEmpty {
-            print("Your task list is empty, good job!")
-        } else {
-            print("Your next task is: \(heap[0])")
-        }
-    }
     
     
     
-    
-    // Private Methods
+    // Private Functions
     
     // HeapifyUp Function -> Makes sure the the parent node is older than its children
     private func heapifyUp() {
@@ -47,7 +39,7 @@ class MinHeap {
         }
     }
     
-    // Helper Methods -> Will be given to the learner in the form of an initial savepoint of an exercise
+    // Helper Functions -> Will be given to the learner in the form of an initial savepoint of an exercise
     private func leftChildIndex(of index: Int) -> Int {
         return (2 * index) + 1
     }
@@ -77,7 +69,7 @@ class TaskNode {
         self.task = task
     }
     
-    // Getter Methods
+    // Getter Functions
     func getTask() -> String {
         return task
     }
@@ -111,17 +103,16 @@ extension TaskNode: Comparable, CustomStringConvertible {
         return "\(task), Due: \(dueDate.formatted())"
     }
 }
-/*
+
 let toDoList: MinHeap = MinHeap();
 let dateFormatter = DateFormatter()
 dateFormatter.dateFormat = "MM/dd/yyyy HH:mm"
+// Checkpoint 2
 toDoList.add(task: "Mentor Intern", dueDate: dateFormatter.date(from: "09/15/2041 16:25")!)
 toDoList.add(task: "Swap Laundry", dueDate: dateFormatter.date(from: "11/05/2003 13:00")!)
 toDoList.add(task: "Run Anti Virus Software", dueDate: dateFormatter.date(from: "08/31/2009 23:30")!)
-print(toDoList)
-print()
-toDoList.getTask()
- */
+// Checkpoint 3
+
 
 
 /* Final Save Point
@@ -141,7 +132,7 @@ class MinHeap {
         self.heap = [];
     }
     
-    // Public Methods
+    // Public Functions
     
     // Add Function -> Adds a task to the heap
     func add(task: String, dueDate: Date) {
@@ -160,7 +151,7 @@ class MinHeap {
         }
     }
     
-    // Private Methods
+    // Private Functions
     
     // HeapifyUp Function -> Makes sure the the parent node is older than its children
     private func heapifyUp() {
@@ -172,7 +163,7 @@ class MinHeap {
         }
     }
     
-    // Helper Methods -> Will be given to the learner in the form of an initial savepoint of an exercise
+    // Helper Functions -> Will be given to the learner in the form of an initial savepoint of an exercise
     private func leftChildIndex(of index: Int) -> Int {
         return (2 * index) + 1
     }
@@ -202,7 +193,7 @@ class TaskNode {
         self.task = task
     }
     
-    // Getter Methods
+    // Getter Functions
     func getTask() -> String {
         return task
     }
@@ -237,13 +228,14 @@ extension TaskNode: Comparable, CustomStringConvertible {
     }
 }
 
-let toDoList: MinHeap = MinHeap();
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "MM/dd/yyyy HH:mm"
-toDoList.add(task: "Mentor Intern", dueDate: dateFormatter.date(from: "09/15/2041 16:25")!)
-toDoList.add(task: "Swap Laundry", dueDate: dateFormatter.date(from: "11/05/2003 13:00")!)
-toDoList.add(task: "Run Anti Virus Software", dueDate: dateFormatter.date(from: "08/31/2009 23:30")!)
-print(toDoList)
-print()
+ let toDoList: MinHeap = MinHeap();
+ let dateFormatter = DateFormatter()
+ dateFormatter.dateFormat = "MM/dd/yyyy HH:mm"
+ // Checkpoint 2
+ toDoList.getTask()
+ toDoList.add(task: "Mentor Intern", dueDate: dateFormatter.date(from: "09/15/2041 16:25")!)
+ toDoList.add(task: "Swap Laundry", dueDate: dateFormatter.date(from: "11/05/2003 13:00")!)
+ toDoList.add(task: "Run Anti Virus Software", dueDate: dateFormatter.date(from: "08/31/2009 23:30")!)
+ // Checkpoint 3
 toDoList.getTask()
 */

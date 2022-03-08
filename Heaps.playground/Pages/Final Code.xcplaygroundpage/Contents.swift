@@ -41,12 +41,12 @@ class MinHeap {
     func finishTask() {
         if heap.isEmpty {
             print("There are no tasks left to complete.")
-            return
         } else {
             heap.swapAt(0, size - 1)
             print("Removing: \(heap.remove(at: size - 1))")
+            heapifyDown()
         }
-        heapifyDown()
+        
     }
     
     // Private Function

@@ -33,9 +33,14 @@ class MinHeap {
     }
     
     // finishTask Function -> Removes the task from the heap and reorganizes it
-    
-    
-    
+    func finishTask() {
+        if heap.isEmpty {
+            print("There are no tasks left to complete.")
+        } else {
+            heap.swapAt(0, size - 1)
+            print("Removing: \(heap.remove(at: size - 1))")
+        }
+    }
     
     // Private Functions
     
@@ -48,6 +53,16 @@ class MinHeap {
             currentIndex = parentIndex(of: currentIndex)
         }
     }
+    
+    // HeapifyDown -> Makes sure the older child is swapped with a younger parent
+    
+    
+    
+    // hasOlderChildren Function -> Determines if a parent has children to swap with and returns the bool to run the while loop and the index of the oldest child to swap with
+    
+    
+    
+    
     
     // Helper Functions -> Will be given to the learner in the form of an initial savepoint of an exercise
     private func leftChildIndex(of index: Int) -> Int {
@@ -113,17 +128,6 @@ extension TaskNode: Comparable, CustomStringConvertible {
         return "\(task), Due: \(dueDate.formatted())"
     }
 }
-
-let toDoList: MinHeap = MinHeap();
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "MM/dd/yyyy HH:mm"
-// Checkpoint 2
-
-toDoList.add(task: "Mentor Intern", dueDate: dateFormatter.date(from: "09/15/2009 16:25")!)
-toDoList.add(task: "Swap Laundry", dueDate: dateFormatter.date(from: "11/05/2003 13:00")!)
-toDoList.add(task: "Run Anti Virus Software", dueDate: dateFormatter.date(from: "08/31/2041 23:30")!)
-// Checkpoint ?
-
 
 /* Final Save Point
 
@@ -183,6 +187,30 @@ class MinHeap {
         }
     }
     
+    // HeapifyDown -> Makes sure the older child is swapped with a younger parent
+    
+    
+    
+    // hasOlderChildren Function -> Determines if a parent has children to swap with and returns the bool to run the while loop and the index of the oldest child to swap with
+    private func hasOlderChildren(_ currentIndex: Int) -> (Bool, Int) {
+        var olderChild = false
+        var olderChildIndex = 0
+        
+        let leftChildIndex = leftChildIndex(of: currentIndex)
+        let rightChildIndex = rightChildIndex(of: currentIndex)
+        if indexExists(leftChildIndex) && heap[currentIndex] > heap[leftChildIndex] {
+            olderChild = true
+            olderChildIndex = leftChildIndex
+        }
+        if indexExists(rightChildIndex)
+            && heap[currentIndex] > heap[rightChildIndex]
+            && heap[rightChildIndex] < heap[leftChildIndex]{
+            olderChild = true
+            olderChildIndex = rightChildIndex
+        }
+        return (olderChild, olderChildIndex)
+    }
+    
     // Helper Functions -> Will be given to the learner in the form of an initial savepoint of an exercise
     private func leftChildIndex(of index: Int) -> Int {
         return (2 * index) + 1
@@ -247,16 +275,4 @@ extension TaskNode: Comparable, CustomStringConvertible {
         return "\(task), Due: \(dueDate.formatted())"
     }
 }
-
-let toDoList: MinHeap = MinHeap();
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "MM/dd/yyyy HH:mm"
-// Checkpoint 2
-toDoList.finishTask()
-toDoList.add(task: "Mentor Intern", dueDate: dateFormatter.date(from: "09/15/2009 16:25")!)
-toDoList.add(task: "Swap Laundry", dueDate: dateFormatter.date(from: "11/05/2003 13:00")!)
-toDoList.add(task: "Run Anti Virus Software", dueDate: dateFormatter.date(from: "08/31/2041 23:30")!)
-// Checkpoint ?
-toDoList.finishTask()
-print(toDoList)
 */

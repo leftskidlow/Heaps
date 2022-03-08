@@ -58,6 +58,7 @@ class MinHeap {
     
     
     
+    
     // hasOlderChildren Function -> Determines if a parent has children to swap with and returns the bool to run the while loop and the index of the oldest child to swap with
     private func hasOlderChildren(_ currentIndex: Int) -> (Bool, Int) {
         var olderChild = false

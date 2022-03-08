@@ -1,3 +1,4 @@
+
 import Foundation
 
 class MinHeap {
@@ -54,7 +55,7 @@ class MinHeap {
         }
     }
     
-    // HeapifyDown -> Makes sure the older child is swapped with a younger parent
+    // HeapifyDown Function -> Makes sure the older child is swapped with a younger parent
     
     
     
@@ -161,10 +162,10 @@ toDoList.add(task: "Run Anti Virus Software", dueDate: dateFormatter.date(from: 
 toDoList.add(task: "Relax", dueDate: dateFormatter.date(from: "01/11/2100 19:00")!)
 print(toDoList)
 print()
-// Checkpoint ?
-
-
-
+// Checkpoint 6
+ 
+ 
+ 
 /* Final Save Point
 
 import Foundation
@@ -224,7 +225,7 @@ class MinHeap {
         }
     }
     
-    // HeapifyDown -> Makes sure the older child is swapped with a younger parent
+    // HeapifyDown Function -> Makes sure the older child is swapped with a younger parent
     private func heapifyDown() {
         var currentIndex = 0
         var toSwap: (needsToSwap: Bool, olderChildIndex: Int) = hasOlderChildren(currentIndex)
@@ -339,7 +340,7 @@ toDoList.add(task: "Run Anti Virus Software", dueDate: dateFormatter.date(from: 
 toDoList.add(task: "Relax", dueDate: dateFormatter.date(from: "01/11/2100 19:00")!)
 print(toDoList)
 print()
-// Checkpoint ?
+// Checkpoint 6
 toDoList.finishTask()
 toDoList.finishTask()
 print(toDoList)
